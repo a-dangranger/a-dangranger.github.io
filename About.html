@@ -3,146 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Anthony D'Angelo Website and Portfolio - About</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
         }
-        .container {
-            width: 80%;
-            margin: auto;
+        .navbar {
+            background-color: #333;
             overflow: hidden;
+            color: white;
         }
-        header {
-            background: #50b3a2;
-            color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
-        }
-        header a {
-            color: #ffffff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
+        .navbar a {
             float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
-        }
-        header a:hover {
-            color: #ffffff;
-            font-weight: bold;
-        }
-        .about-info {
-            margin-top: 50px;
-            padding: 20px;
-            background: #ffffff;
-        }
-        .about-info h1, .about-info p {
+            display: block;
+            color: white;
             text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
         }
-        .team {
-            margin-top: 30px;
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
         }
-        .team-member {
-            margin-bottom: 50px;
-            overflow: hidden;
+        .hero {
+            padding: 50px;
+            text-align: center;
+            background: #318CE7;
+            color: white;
         }
-        .team-member img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            float: left;
-            margin-right: 20px;
-        }
-        .team-member h3, .team-member p {
-            margin: 0;
+        .hero h1 {
+            font-size: 40px;
         }
         footer {
-            background: #333333;
-            color: #ffffff;
+            background-color: #333;
+            color: white;
             text-align: center;
             padding: 10px;
-            position: relative;
+            position: fixed;
             bottom: 0;
             width: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Our</span> Company</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li class="current"><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <section class="about-info">
-        <div class="container">
-            <h1>About Our Company</h1>
-            <p>We are a leading technology firm with a passion for innovation and excellence. Our mission is to deliver cutting-edge solutions that empower our clients and contribute to their success.</p>
-        </div>
-    </section>
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+	
+</div>
 
-    <section class="team">
-        <div class="container">
-            <h1>Meet Our Team</h1>
-            <!-- Team Member -->
-            <div class="team-member">
-                <img src="images/member1.jpg" alt="Team Member">
-                <h3>Jane Doe</h3>
-                <p>CEO & Founder</p>
-            </div>
-            <!-- Team Member -->
-            <div class="team-member">
-                <img src="images/member2.jpg" alt="Team Member">
-                <h3>John Smith</h3>
-                <p>Lead Developer</p>
-            </div>
-            <!-- Team Member -->
-            <div class="team-member">
-                <img src="images/member3.jpg" alt="Team Member">
-                <h3>Sarah Williams</h3>
-                <p>Project Manager</p>
-            </div>
-        </div>
-    </section>
+<div class="hero">
+    <h1>Personal Profile</h1>
+    <p>I am a highly motivated individual with a passion for learning, a lifestyle of continuous improvement,
+	and a strong belief that quality is key in everything you do. I am a top performer on any team and have the track record to back it up.</p>
+</div>
 
-    <footer>
-        <p>Created in partnership with myself, myself, and most importantly...myself.</p>
-    </footer>
+<footer>
+    <p>Created in partnership with myself, myself, and most importantly...myself.</p>
+</footer>
+
 </body>
 </html>
