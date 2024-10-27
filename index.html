@@ -35,7 +35,6 @@
             text-align: center;
             font-size: larger ;
             padding: 14px 20px;
-            text-decoration: none;
             transition: background-color 0.1s;
         }
         .navbar a:hover {
@@ -136,10 +135,25 @@
         }
         @media only screen and (max-width: 480px){
             .navbar{
-                display: none;
+                color: #fff;
+                text-align: center;
+                transition: background-color 0.1s;
+                position: relative;
+                margin: auto;
+                overflow: hidden;
+                border-bottom: 3px solid #0a74da;
+                z-index: 100;
+                border-radius: 40px;
+                position: relative;
+                padding-left: 10%;
+                padding-right: 10%;
+                top: 0%;
+                left: 0%;
+                transform: translate(0%, 115%);
             }
-            .hero, .experience {
-                padding: 15px;
+            .hero {
+                padding: 50px;
+                margin-top: 0%;
                 font-size: 16px;
             }
             .hero h1 {
