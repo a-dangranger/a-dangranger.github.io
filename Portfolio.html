@@ -16,14 +16,14 @@
         .navbar {
             background-color: #696969a1;
             overflow: hidden;
-            color: rgb(255, 255, 255);
+            color: #fff;
             border-bottom: 3px solid #0a74da;
             z-index: 100;
             border-radius: 40px;
             float: none;
             position: absolute;
-            padding-left: 200px;
-            padding-right: 200px;
+            padding-left: 10%;
+            padding-right: 10%;
             top: 8%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -45,11 +45,11 @@
         .hero {
             padding: 100px;
             text-align: center;
-            background: rgba(255, 255, 255, 0);
-            color: white;
+            background: #fff;
+            color: #fff;
             position: relative;
             background-image: url('img_science.jpg');
-            background-size: auto;
+            background-size: cover;
             position: relative;
         }
         .hero h1 {
@@ -59,18 +59,87 @@
             text-shadow: 0 0 10px #0a74da, 0 0 20px #0a74da, 0 0 30px #0a74da, 0 0 40px #0a74da, 0 0 70px #0a74da, 0 0 80px #0a74da, 0 0 100px #0a74da;
             animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out forwards; /* Make name zoom in with animation */
         }
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
+        .hero h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #0a74da, 0 0 20px #0a74da, 0 0 30px #0a74da, 0 0 40px #0a74da, 0 0 70px #0a74da, 0 0 80px #0a74da, 0 0 100px #0a74da;
+            animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out forwards; /* Make name zoom in with animation */
+        }
+        .container {
+            width: 80%;
             margin: 0 auto;
-            border-radius: 25px;
-            padding-top: 20px;
-            padding-right: 30px;
-            padding-bottom: 20px;
-            padding-left: 30px;
-            line-height: 1.5;
-            background-color: #6969698a;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5), -2px -2px 5px rgba(255, 255, 255, 0.2);
+            padding: 20px;
+        }
+        .container h1 {
+            text-align: center;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .projects {
+            background: #fff;
+            padding: 1%;
+            margin: auto;
+            box-shadow: 0 2px 4px #000000c9;
+            border-radius: 5px;
+        }
+        .projects h2 {
+            color: #0a74da;
+        }
+        .projects p {
+            text-align: center;
+        }
+        .blankspace {
+            border-bottom: 3px solid #0a74da;
+            margin: 1%;
+            padding-left: 1%;
+            position: relative;
+        }
+        .blankspace2 {
+            margin: 1%;
+            padding-left: 1%;
+            position: relative;
+        }
+        footer {
+            background-color: #696969a1;
+            color: white;
+            text-align: center;
+            padding: .5%;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            border-top: 3px solid #0a74da;
+        }
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #0a74da, 0 0 20px #0a74da, 0 0 30px #0a74da, 0 0 40px #0a74da, 0 0 70px #0a74da, 0 0 80px #0a74da, 0 0 100px #0a74da;
+            }
+            to {
+                text-shadow: 0 0 20px #0a74da, 0 0 30px #0a74da, 0 0 40px #0a74da, 0 0 50px #0a74da, 0 0 80px #0a74da, 0 0 90px #0a74da, 0 0 120px #0a74da;
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        @media only screen and (max-width: 480px){
+            .navbar{
+                display: none;
+            }
+            .hero, .experience {
+                padding: 15px;
+                font-size: 16px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
@@ -78,10 +147,40 @@
     <nav class="navbar">
         <a href="index.html">Home</a>
         <a href="Portfolio.html">Portfolio</a>
+        <a href="Resume.html">Resume</a>
     </nav>
     <div class="hero">
-        <h1>Coming Soon</h1>
-        <p></p>
+        <h1>Personal Portfolio</h1>
+        <h2>A mix of work and fun</h2>
     </div>
+    <div class="container">
+        <div class="projects">
+            <h2>Project Title (make this clickable)</h2>
+            <p>
+                Paragraph providing details.
+            </p>
+        </div>
+        <div class="blankspace">
+        </div>
+        <div class="projects">
+            <h2>Project Title (make this clickable)</h2>
+            <p>
+                Paragraph providing details.
+            </p>
+        </div>
+        <div class="blankspace">
+        </div>
+        <div class="projects">
+            <h2>Project Title (make this clickable)</h2>
+            <p>
+                Paragraph providing details.
+            </p>
+        </div>
+    </div>
+    <div class="blankspace2">
+    </div>
+    <footer>
+        <p>&copy; 2024 Anthony D'Angelo. All rights reserved.</p>
+    </footer>
 </body>
 </html>
