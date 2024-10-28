@@ -133,6 +133,24 @@
                 transform: scale(1);
             }
         }
+        @keyframes shootingStar {
+            0% {
+                transform: translateX(0) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(-1000px) translateY(-600px);
+                opacity: 0;
+            }
+        }
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+            animation: shootingStar 2s linear infinite;
+        }
         @media only screen and (max-width: 480px){
             .navbar{
                 color: #fff;
@@ -178,7 +196,13 @@
             environment. Experience with Python, C#, C++, Visual Basics, SQL, 
             HTML/CSS, R. Well versed in global supply chain, procurement, and compliant
             practices in the federal contracting space.</p>
-    </div>
+            <div class="shooting-star" style="top: 10%; left: 80%; animation-delay: 0s;"></div>
+            <div class="shooting-star" style="top: 40%; left: 90%; animation-delay: 1s;"></div>
+            <div class="shooting-star" style="top: 70%; left: 60%; animation-delay: 2s;"></div>
+            <div class="shooting-star" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+            <div class="shooting-star" style="top: 40%; left: 30%; animation-delay: 1s;"></div>
+            <div class="shooting-star" style="top: 70%; left: 40%; animation-delay: 2s;"></div>       
+        </div>
     <div class="container">
         <h1>Portfolio Highlights</h1>
         <h2>A selection of some of my favorite projects</h2>
