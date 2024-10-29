@@ -12,6 +12,10 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .navbar {
             background-color: #696969a1;
@@ -70,16 +74,75 @@
             line-height: 1.5;
             background-color: #6969698a;
         }
-        .container {
+        .main_container {
             width: 80%;
             margin: 0 auto;
             padding: 20px;
         }
-        .container h1 {
+        .main_container h1 {
             text-align: center;
         }
-        .container h2 {
+        .main_container h2 {
             text-align: center;
+        }
+        .skills_container {
+            width: 60%;
+            text-align: center;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .skills_container h1 {
+            margin-top: 20px;
+            color: #0a74da;
+            font-size: 2.5em;
+            animation: fadeInSlide 2s ease-in-out;
+        }
+        .skills {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            animation: fadeInSlide 2s ease-in-out;
+        }
+        .skills li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0a74da, #00d4ff);
+            color: white;
+            padding: 20px;
+            height: 120px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .skills li:before, .skills li:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+        .skills li:after {
+            transform: rotate(-30deg);
+        }
+        .skills li:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .skills li span {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1em;
+            animation: bounceIn 1.5s ease-in-out infinite alternate;
         }
         .projects {
             background: #fff;
@@ -155,6 +218,24 @@
             box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
             animation: shootingStar 2s linear infinite;
         }
+        @keyframes fadeInSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-5px);
+            }
+        }
         @media only screen and (max-width: 480px){
             .navbar{
                 color: #fff;
@@ -212,7 +293,27 @@
             <div class="shooting-star" style="top: 50%; left: 10%; animation-delay: .65s;"></div>
             <div class="shooting-star" style="top: 60%; left: 50%; animation-delay: .82s;"></div>             
         </div>
-    <div class="container">
+        <div class="skills_container">
+            <h1>Skills & Competencies</h1>
+            <ul class="skills">
+                <li><span>Data Analysis</span></li>
+                <li><span>Change Management</span></li>
+                <li><span>Python Programming</span></li>
+                <li><span>SQL</span></li>
+                <li><span>R</span></li>
+                <li><span>Tableau & Power BI</span></li>
+                <li><span>People Leadership</span></li>
+                <li><span>Employee Training and Development</span></li>
+                <li><span>Process Improvement</span></li>
+                <li><span>Global Supply Chain Management</span></li>
+                <li><span>SAP S/4</span></li>
+                <li><span>Atlassian Jira</span></li>
+                <li><span>Customer Service and Support</span></li>
+                <li><span>Quality Inspection</span></li>
+                <li><span>Communication and Presentation</span></li>
+            </ul>
+        </div>
+        <div class="main_container">
         <h1>Portfolio Highlights</h1>
         <h2>A selection of some of my favorite projects</h2>
         <div class="projects">
