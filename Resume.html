@@ -58,10 +58,23 @@
             text-shadow: 0 0 10px #0a74da, 0 0 20px #0a74da, 0 0 30px #0a74da, 0 0 40px #0a74da, 0 0 70px #0a74da, 0 0 80px #0a74da, 0 0 100px #0a74da;
             animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out forwards; /* Make name zoom in with animation */
         }
-        .container {
+        .main_container {
             width: 80%;
             margin: 0 auto;
-            padding: 1%;
+            padding: 0px;
+        }
+        .main_container h1 {
+            text-align: center;
+            color: #333;
+            font-size: 40px;
+        }
+        .main_container h2 {
+            text-align: center;
+        }
+        .exp_container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 0%;
         }
         .experience {
             background: #fff;
@@ -90,7 +103,7 @@
             position: relative;
         }
         .blankspace2 {
-            margin: 1%;
+            margin: 5%;
             padding-left: 1%;
             position: relative;
         }
@@ -175,7 +188,7 @@
         <a href="Resume.html">Resume</a>
     </nav>
     <div class="hero">
-        <h1>Professional Experience</h1>
+        <h1>My Experience, Education, and Accomplishments</h1>
         <div class="shooting-star" style="top: 10%; left: 80%; animation-delay: 0s;"></div>
         <div class="shooting-star" style="top: 20%; left: 90%; animation-delay: 1s;"></div>
         <div class="shooting-star" style="top: 30%; left: 60%; animation-delay: 2s;"></div>
@@ -189,7 +202,10 @@
         <div class="shooting-star" style="top: 50%; left: 10%; animation-delay: .65s;"></div>
         <div class="shooting-star" style="top: 60%; left: 50%; animation-delay: .82s;"></div>
     </div>
-    <div class="container">
+    <div class="main_container">
+        <h1>Professional Experience</h1>
+    </div>
+    <div class="exp_container">
         <div class="experience">
             <h2>Principal Supply Chain Business Operations Specialist - Digital Transformation</h2>
             <h3>Northrop Grumman Corporation, November 2023 - Present</h3>
@@ -281,8 +297,39 @@
             </ul>
         </div>
     </div>
-    <div class="blankspace2">
+    <div class="main_container">
+        <h1>Formal Education</h1>
     </div>
+    <div class="exp_container">
+        <div class="experience">
+            <h2>Masters in Data Science</h2>
+            <h3>Eastern University</h3>
+        </div>
+        <div class="blankspace">
+        </div>
+        <div class="experience">
+            <h2>Bachelor of Science in Business Administration: Management Information Systems</h2>
+            <h3>The University of Alabama in Huntsville</h3>
+        </div>
+    </div>
+    <div class="main_container">
+        <h1>Accomplishments and More</h1>
+    </div>
+    <div class="exp_container">
+        <div class="experience">
+            <h2>Minority Business News USA magazine: Corporate Buyer of the Year</h2>
+            <h3>2020</h3>
+        </div>
+        <div class="blankspace">
+        </div>
+        <div class="experience">
+            <h2>Publications Editor for CTNEAL (Cherokee Tribe of Northeast Alabama)</h2>
+            <h3>July 2019 - March 2022</h3>
+        </div>
+    </div>
+</div>
+<div class="blankspace2">
+</div>
     <footer>
         <p>&copy; 2024 Anthony D'Angelo. All rights reserved.</p>
     </footer>
