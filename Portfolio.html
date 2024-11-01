@@ -12,6 +12,10 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .navbar {
             background-color: #696969a1;
@@ -58,36 +62,98 @@
             text-shadow: 0 0 10px #0a74da, 0 0 20px #0a74da, 0 0 30px #0a74da, 0 0 40px #0a74da, 0 0 70px #0a74da, 0 0 80px #0a74da, 0 0 100px #0a74da;
             animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out forwards; /* Make name zoom in with animation */
         }
-        .hero h2 {
-            font-size: 30px;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px #0a74da, 0 0 20px #0a74da, 0 0 30px #0a74da, 0 0 40px #0a74da, 0 0 70px #0a74da, 0 0 80px #0a74da, 0 0 100px #0a74da;
-            animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out forwards; /* Make name zoom in with animation */
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 25px;
+            padding-top: 20px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            line-height: 1.5;
+            background-color: #6969698a;
         }
-        .container {
+        .main_container {
             width: 80%;
             margin: 0 auto;
             padding: 20px;
         }
-        .container h1 {
+        .main_container h1 {
+            text-align: center;
+            color: #333;
+            font-size: 40px;
+        }
+        .main_container h2 {
             text-align: center;
         }
-        .container h2 {
+        .skills_container {
+            width: 60%;
             text-align: center;
+            margin: 0 auto;
+            padding: 20px;
         }
-        .projects {
-            background: #fff;
-            padding: 1%;
-            margin: auto;
-            box-shadow: 0 2px 4px #000000c9;
-            border-radius: 5px;
+        .skills_container h1 {
+            margin-top: 20px;
+            margin-bottom: 0px;
+            color: #333;
+            font-size: 40px;
+            animation: fadeInSlide 2s ease-in-out;
         }
-        .projects h2 {
-            color: #0a74da;
+        .skills_container h2 {
+            margin-top: 0px;
+            padding: 0;
+            position-anchor: relative;
+            color: #333;
+            font-size: 20px;
+            animation: fadeInSlide 2s ease-in-out;
         }
-        .projects p {
-            text-align: center;
+        .skills {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            animation: fadeInSlide 2s ease-in-out;
+        }
+        .skills li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #0a74da, #00d4ff);
+            color: white;
+            padding: 20px;
+            height: 120px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .skills li:before, .skills li:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 0;
+            transform: rotate(30deg);
+            pointer-events: none;
+        }
+        .skills li:after {
+            transform: rotate(-30deg);
+        }
+        .skills li:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .skills li span {
+            position: relative;
+            z-index: 1;
+            font-size: 18px;
+            animation: bounceIn 1.5s ease-in-out infinite alternate;
         }
         .blankspace {
             border-bottom: 3px solid #0a74da;
@@ -146,6 +212,24 @@
             box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
             animation: shootingStar 2s linear infinite;
         }
+        @keyframes fadeInSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-5px);
+            }
+        }
         @media only screen and (max-width: 480px){
             .navbar{
                 color: #fff;
@@ -171,9 +255,6 @@
             .hero h1 {
                 font-size: 30px;
             }
-            .hero h2 {
-                font-size: 15px;
-            }
         }
     </style>
 </head>
@@ -185,47 +266,57 @@
     </nav>
     <div class="hero">
         <h1>My Portfolio</h1>
-        <div class="shooting-star" style="top: 10%; left: 80%; animation-delay: 0s;"></div>
-        <div class="shooting-star" style="top: 20%; left: 90%; animation-delay: 1s;"></div>
-        <div class="shooting-star" style="top: 30%; left: 60%; animation-delay: 2s;"></div>
-        <div class="shooting-star" style="top: 40%; left: 20%; animation-delay: 0.5s;"></div>
-        <div class="shooting-star" style="top: 50%; left: 30%; animation-delay: 1.65s;"></div>
-        <div class="shooting-star" style="top: 60%; left: 40%; animation-delay: 2s;"></div>
-        <div class="shooting-star" style="top: 70%; left: 80%; animation-delay: 0.2s;"></div>
-        <div class="shooting-star" style="top: 95%; left: 10%; animation-delay: .8s;"></div>
-        <div class="shooting-star" style="top: 90%; left: 60%; animation-delay: 2.3s;"></div>
-        <div class="shooting-star" style="top: 40%; left: 80%; animation-delay: 0.5s;"></div>
-        <div class="shooting-star" style="top: 50%; left: 10%; animation-delay: .65s;"></div>
-        <div class="shooting-star" style="top: 60%; left: 50%; animation-delay: .82s;"></div>   
+            <div class="shooting-star" style="top: 10%; left: 80%; animation-delay: 0s;"></div>
+            <div class="shooting-star" style="top: 20%; left: 90%; animation-delay: 1s;"></div>
+            <div class="shooting-star" style="top: 30%; left: 60%; animation-delay: 2s;"></div>
+            <div class="shooting-star" style="top: 40%; left: 20%; animation-delay: 0.5s;"></div>
+            <div class="shooting-star" style="top: 50%; left: 30%; animation-delay: 1.65s;"></div>
+            <div class="shooting-star" style="top: 60%; left: 40%; animation-delay: 2s;"></div>
+            <div class="shooting-star" style="top: 70%; left: 80%; animation-delay: 0.2s;"></div>
+            <div class="shooting-star" style="top: 95%; left: 10%; animation-delay: .8s;"></div>
+            <div class="shooting-star" style="top: 90%; left: 60%; animation-delay: 2.3s;"></div>
+            <div class="shooting-star" style="top: 40%; left: 80%; animation-delay: 0.5s;"></div>
+            <div class="shooting-star" style="top: 50%; left: 10%; animation-delay: .65s;"></div>
+            <div class="shooting-star" style="top: 60%; left: 50%; animation-delay: .82s;"></div>             
+        </div>
+        <div class="skills_container">
+            <h1>Python Projects</h1>
+            <ul class="skills">
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+            </ul>
+            <h1>SQL Projects</h1>
+            <ul class="skills">
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+            </ul>
+            <h1>Data Visualization</h1>
+            <h2>Tableau & Qlik Sense</h2>
+            <ul class="skills">
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+            </ul>
+            <h1>R for Data Science</h1>
+            <ul class="skills">
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+            </ul>
+            <h1>Web Development</h1>
+            <h2>HTML & CSS</h2>
+            <ul class="skills">
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+                <li><span>Coming Soon</span></li>
+            </ul>
+        </div>
+    <div class="blankspace2">
     </div>
-    <div class="container">
-        <div class="projects">
-            <h2>Project Title (coming soon)</h2>
-            <p>
-                Project details coming soon.
-            </p>
-        </div>
-        <div class="blankspace">
-        </div>
-        <div class="projects">
-            <h2>Project Title (coming soon)</h2>
-            <p>
-                Project details coming soon.
-            </p>
-        </div>
-        <div class="blankspace">
-        </div>
-        <div class="projects">
-            <h2>Project Title (coming soon)</h2>
-            <p>
-                Project details coming soon.
-            </p>
-        </div>
-    </div>
-<div class="blankspace2">
-</div>
-<footer>
-    <p>&copy; 2024 Anthony D'Angelo. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Anthony D'Angelo. All rights reserved.</p>
+    </footer>
 </body>
 </html>
