@@ -4,13 +4,15 @@ body {
     flex-direction: column; /* Arrange children vertically */
     height: 100%;
     color: #333;
+    background-color: #69696936;
     flex: 1;
     width: 80%;
     margin: 0 auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: auto;
+    overflow-y: scroll; /* Show scrollbars */
 }
 body h1{
     text-align: center;
@@ -29,14 +31,14 @@ body h1{
     padding-right: 10%;
     top: 10%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -75%);
 }
 .navbar a {
     float: left;
     display: block;
     color: #fff;
     text-align: center;
-    font-size: larger ;
+    font-size: 20 ;
     padding: 14px 20px;
     transition: background-color 0.1s;
 }
@@ -50,15 +52,19 @@ body h1{
     background: #fff;
     color: #fff;
     position: relative;
-    background-image: url('img_science.jpg');
+    background-image: url('img_science2.jpg');
+    background-position: center;
     background-size: cover;
-    position: relative;
     border-radius: 25px;
+    height: 50px;
 }
 .hero h1 {
-    font-size: 70px;
+    font-size: 40px;
     margin-bottom: 10px;
     letter-spacing: 2px;
+    text-shadow: 3px 4px 8px rgba(0,0,0,0.87);
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #000000;
     animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out forwards; /* Make name zoom in with animation */
 }
 .hero h2 {
@@ -67,8 +73,23 @@ body h1{
     letter-spacing: 2px;
     animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out forwards; /* Make name zoom in with animation */
 }
-.hero p {
+.highlight_container {
+    text-align: center;
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-top: -30px;
+    background-color: #696969;
+    border-top: 3px solid #0a74da;
+    color: #fff;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+.highlight p {
     font-size: 20px;
+    margin-bottom: 10px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -78,7 +99,6 @@ body h1{
     padding-bottom: 20px;
     padding-left: 30px;
     line-height: 1.5;
-    background-color: #6969698a;
     margin-bottom: 1px;
 }
 .skills_container {
@@ -87,20 +107,18 @@ body h1{
     margin: 0 auto;
     padding: 20px;
 }
-.skills_container h1 {
-    margin-top: 20px;
+.skills_container h2 {
+    margin-top: 0px;
     margin-bottom: auto;
     color: #333;
-    font-size: 40px;
-    animation: fadeInSlide 2s ease-in-out;
+    font-size: 30px;
 }
-.skills_container h2 {
+.skills_container h3 {
     margin-top: 0px;
     padding: 0;
     position-anchor: relative;
     color: #333;
     font-size: 20px;
-    animation: fadeInSlide 2s ease-in-out;
 }
 .skills {
     list-style: none;
@@ -141,7 +159,7 @@ body h1{
 .skills li span {
     position: relative;
     z-index: 1;
-    font-size: 18px;
+    font-size: 16px;
     animation: bounceIn 1.5s ease-in-out infinite alternate;
     margin-bottom: 0;
     word-wrap: break-word; /* Ensure text breaks within the container */
