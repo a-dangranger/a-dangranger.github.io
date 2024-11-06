@@ -1,10 +1,21 @@
 body {
     font-family: 'Helvetica Neue', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange children vertically */
+    height: 100%;
     color: #333;
+    flex: 1;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+body h1{
+    text-align: center;
+}
+
 .navbar {
     background-color: #696969a1;
     overflow: hidden;
@@ -42,6 +53,7 @@ body {
     background-image: url('img_science.jpg');
     background-size: cover;
     position: relative;
+    border-radius: 25px;
 }
 .hero h1 {
     font-size: 70px;
@@ -69,19 +81,6 @@ body {
     background-color: #6969698a;
     margin-bottom: 1px;
 }
-.main_container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
-.main_container h1 {
-    text-align: center;
-    color: #333;
-    font-size: 40px;
-}
-.main_container h2 {
-    text-align: center;
-}
 .skills_container {
     width: 60%;
     text-align: center;
@@ -107,12 +106,15 @@ body {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* This line forces 3 items per row */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    animation: fadeInSlide 2s ease-in-out;
+    justify-content: center;
+    max-width: 100%; /* Ensure the container does not exceed the maximum width */
 }
 .skills li {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #0a74da, #00d4ff);
@@ -121,9 +123,20 @@ body {
     height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     position: relative;
-    overflow: hidden;
+    overflow: hidden; /* Control overflow */
+    max-width: 100%; /* Ensure the item does not exceed the container's width */
+}
+.skills li img {
+    width: 100%; /* Ensure images scale to the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure images do not exceed the container's width */
+    margin-top: 10px;
+    transition: none;
+    z-index: 2;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 .skills li span {
     position: relative;
@@ -131,6 +144,7 @@ body {
     font-size: 18px;
     animation: bounceIn 1.5s ease-in-out infinite alternate;
     margin-bottom: 0;
+    word-wrap: break-word; /* Ensure text breaks within the container */
 }
 .skills li:before, .skills li:after {
     content: '';
@@ -148,14 +162,8 @@ body {
     transform: rotate(-30deg);
 }
 .skills li:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-.skills li span {
-    position: relative;
-    z-index: 1;
-    font-size: 18px;
-    animation: bounceIn 1.5s ease-in-out infinite alternate;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Add black shadow on hover */
+    transform: scale(1.05); /* Slightly scale the container */
 }
 .exp_container {
     width: 80%;
@@ -171,6 +179,10 @@ body {
 }
 .experience h2 {
     color: #0a74da;
+    text-align: center;
+}
+.experience h3 {
+    text-align: center;
 }
 .experience ul {
     list-style: circle;
@@ -182,15 +194,6 @@ body {
     margin-bottom: 1%;
     position: relative;
 }
-.dynamic_preview_content {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-end;
-}
-
 .blankspace {
     border-bottom: 3px solid #0a74da;
     margin: 1%;
@@ -207,11 +210,12 @@ footer {
     color: white;
     text-align: center;
     padding: .5%;
-    position: relative;
-    bottom: 0;
     width: 100%;
     border-top: 3px solid #0a74da;
+    margin-top: auto;
+    border-radius: 25px;
 }
+
 
 @keyframes fadeIn {
     from {
@@ -259,32 +263,25 @@ footer {
         transform: translateY(-5px);
     }
 }
-@media only screen and (max-width: 480px){
-    .navbar{
-        color: #fff;
-        text-align: center;
-        font-size: 12px;
-        transition: background-color 0.1s;
-        margin: auto;
-        overflow: hidden;
-        border-bottom: 3px solid #0a74da;
-        z-index: 100;
-        border-radius: 40px;
-        position: absolute;
-        margin: auto;
-        top: 0%;
-        left: 0%;
-        transform: translate(0%, 10%);
+@media (max-width: 600px) {
+    body, .navbar, .hero, .hero h1, .hero h2, .hero p {
+        width: auto; /* Adjusted to for mobile */
+        height: auto;
     }
-    .hero {
-        font-size: 16px;
-        padding-top: 100px;
+    .skills_container {
+        width: auto; /* Adjusted width for mobile */
     }
-    .hero h1 {
-        font-size: 30px;
+    .skills {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 10px; /* Adjusted gap */
+        justify-content: center;
+        max-width: 100%; /* Full width for mobile */
     }
-    .skills li span {
-        font-size: 9px;
-        padding: 5px;
-    }
+    .experience {
+        margin: 10px auto; /* Adjusted margin for mobile */
+    }  
 }
+
