@@ -281,10 +281,58 @@ footer {
         transform: translateY(-5px);
     }
 }
-@media (max-width: 600px) {
-    body, .navbar, .hero, .hero h1, .hero h2, .hero p {
+@media only screen and (max-width: 600px) {
+    body,.hero, .hero h1, .hero h2, .hero p, .navbar, .navbar a, .highlight_container {
         width: auto; /* Adjusted to for mobile */
         height: auto;
+        text-align: center;
+        padding: auto;
+        margin: auto;
+        border-radius: 0px;
+        align-content: center;
+    }
+    .hero {
+        background-size: auto;
+        height: 10px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .hero h1 {
+        font-size: 20px;
+    }
+    .highlight_container p {
+    font-size: 10px;
+    }
+    .skills_container h1 {
+        font-size: 20px;
+    }
+    .experience h1 {
+        font-size: 20px;
+    }
+    .skills_container h2 {
+        font-size: 16px;
+    }
+    .experience h2 {
+        font-size: 16px;
+    }
+    .navbar {
+        background-color: #696969;;
+        overflow: hidden;
+        color: #fff;
+        border-bottom: 3px solid #0a74da;
+        z-index: 100;
+        border-radius: 0px;
+        float: none;
+        position: relative;
+        padding: auto;
+        margin: auto;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+    }
+    .navbar a {
+        font-size: 12px;
     }
     .skills_container {
         width: auto; /* Adjusted width for mobile */
