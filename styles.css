@@ -168,7 +168,7 @@ a:link {
 .skills li span {
     position: relative;
     z-index: 1;
-    font-size: 16px;
+    font-size: 18px;
     animation: bounceIn 1.5s ease-in-out infinite alternate;
     margin-bottom: 0;
     word-wrap: break-word; /* Ensure text breaks within the container */
