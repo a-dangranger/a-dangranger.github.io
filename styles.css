@@ -18,6 +18,15 @@ body h1{
     text-align: center;
 }
 
+a:link {
+    color: blue;
+  }
+
+  a:visited {
+    color: blue;
+
+  }
+
 .navbar {
     background-color: #696969a1;
     overflow: hidden;
@@ -348,6 +357,5 @@ footer {
     }
     .experience {
         margin: 10px auto; /* Adjusted margin for mobile */
-    }  
+    }
 }
-
