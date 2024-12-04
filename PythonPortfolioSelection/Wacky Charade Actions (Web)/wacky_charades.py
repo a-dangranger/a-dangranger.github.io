@@ -19,10 +19,10 @@ import pandas as pd
 #Read Names Files
 adverbs_df = pd.read_excel("new_names_list.xlsx", sheet_name="Adverbs",usecols="A")
 Gerunds_df = pd.read_excel("new_names_list.xlsx", sheet_name="Words",usecols="A")
-Agent_Nounds_df = pd.read_excel("new_names_list.xlsx", sheet_name="Words",usecols="B")
+Agent_Nouns_df = pd.read_excel("new_names_list.xlsx", sheet_name="Words",usecols="B")
 
 #Now we concatenate all the columns into one
-horizontal_concat = pd.concat([adverbs_df, Gerunds_df, Agent_Nounds_df], axis=1)
+horizontal_concat = pd.concat([adverbs_df, Gerunds_df, Agent_Nouns_df], axis=1)
 horizontal_concat.dropna()
 
 #Define red font color
